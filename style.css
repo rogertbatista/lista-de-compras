@@ -121,11 +121,17 @@ html, body{
     cursor: pointer;
 }
 
+.underline{
+    border: 1px solid #000;
+    width: 100%;
+}
+
 footer p{
     text-align: center;
     font-weight: bold;
     font-style: italic;
     font-size: .9em;
+    padding-top: 10px;
 }
 
 footer span{
