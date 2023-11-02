@@ -1,0 +1,208 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Oxygen+Mono&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Oxygen Mono';
+}
+
+html, body{
+    height: 100vh;
+    background-color: rgb(3, 52, 72);
+}
+
+.section-center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #fff;
+    width: 400px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+}
+
+.grocery-form .alert{
+    margin-bottom: 1rem;
+    height: 1.25rem;
+    display: grid;
+    align-items: center;
+    text-align: center;
+    font-size: 0.7rem;
+    border-radius: 0.25rem;
+    letter-spacing: .25rem;
+    text-transform: capitalize;
+}
+
+.alert-danger{
+    color: #721c24;
+    background-color: #f8d7da;
+}
+
+.alert-success{
+    color: #155724;
+    background-color: #d4edda;
+}
+
+.grocery-form h3{
+    margin-top: 15px;
+    text-align: center;
+    color: rgb(2, 26, 57);
+}
+
+.grocery-form .form-control{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.form-control{
+    margin-bottom: 30px;
+}
+
+.form-control #grocery{
+    background-color: lightblue;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    padding: 5px;
+}
+
+.form-control .submit-btn{
+    background-color: rgb(70, 169, 202);
+    border: none;
+    border-radius: 0 5px 5px 0;
+    padding: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.grocery-container {
+    text-align: center;
+    visibility: hidden;
+}
+
+.show-container{
+    visibility: visible;
+}
+
+.grocery-item{
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-container button{
+    cursor: pointer;
+}
+
+.btn-container .edit-btn{
+    background-color: #fff;
+    color: lightgreen;
+    border: none;
+    font-size: 1.2em;
+}
+
+.btn-container .del-btn {
+    background-color: #fff;
+    color: rgb(144, 6, 6);
+    border: none;
+    font-size: 1.2em;
+}
+
+.clear-btn{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: #fff;
+    color: rgb(144, 6, 6);
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+footer p{
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+    font-size: .9em;
+}
+
+footer span{
+    color: darkblue;
+}
+
+@media screen and (min-width:800px) {
+    .section-center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        width: 600px;
+        border-radius: 10px;
+        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+        padding: 10px;
+    }
+    
+    .grocery-form h3 {
+        margin-top: 15px;
+        text-align: center;
+        color: rgb(2, 26, 57);
+        font-size: 2em;
+    }
+    
+    .form-control #grocery {
+        background-color: lightblue;
+        border: none;
+        border-radius: 5px 0 0 5px;
+        padding: 8px;
+        width: 300px;
+    }
+    
+    .form-control .submit-btn {
+        background-color: rgb(70, 169, 202);
+        border: none;
+        border-radius: 0 5px 5px 0;
+        padding: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width:799px) {
+    .section-center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        width: 300px;
+        border-radius: 10px;
+        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+        padding: 10px;
+    }
+
+    .grocery-form h3 {
+        margin-top: 15px;
+        text-align: center;
+        color: rgb(2, 26, 57);
+    }
+
+    .form-control #grocery {
+        background-color: lightblue;
+        border: none;
+        border-radius: 5px 0 0 5px;
+        padding: 5px;
+    }
+    
+    .form-control .submit-btn {
+        background-color: rgb(70, 169, 202);
+        border: none;
+        border-radius: 0 5px 5px 0;
+        padding: 5px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+}

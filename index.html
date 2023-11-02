@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--styles-->
+    <link rel="stylesheet" href="style.css">
+    <!--font awesome-->
+    <script src="https://kit.fontawesome.com/6ed447261c.js" crossorigin="anonymous"></script>
+    <title>Lista de Compras</title>
+</head>
+<body>
+    <section class="section-center">
+        <!--form-->
+        <form class="grocery-form">
+            <p class="alert"></p>
+            <h3>Lista de Compras</h3>
+            <div class="form-control">
+                <input type="text" id="grocery" placeholder="ex. ovos">
+                <button type="submit" class="submit-btn">Adicionar</button>
+            </div>
+        </form>
+        <!--list-->
+        <div class="grocery-container">
+            <div class="grocery-list"></div>
+            <!--button-->
+            <button type="button" class="clear-btn">excluir produtos</button>
+        </div>
+        <footer>
+            <p>Roger Teixeira Batista &copy; <span class="year"></span></p>
+        </footer>
+    </section>
+    <!--javascript-->
+    <script src="app.js"></script>
+</body>
+</html>

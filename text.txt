@@ -1,0 +1,111 @@
+// Principal Component Event
+form.addEventListener('submit', addItem);
+
+// Clear all Items Event
+clearBtn.addEventListener('click', clearItems);
+
+// Principal Component
+function addItem(e){
+    e.preventDefault();
+    const value = grocery.value;
+
+    const id = new Date().getTime().toString();
+    if(value && !editFlag){
+        const element = document.createElement('article');
+
+        element.classList.add('grocery-item');
+
+        const attr = document.createAttribute('data-id');
+
+        attr.value = id;
+
+        element.setAttributeNode(attr);
+
+        element.innerHTML = `<p class="title">${value}</p>
+                    <div class="btn-container">
+                        <button type="button" class="edit-btn">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button type="button" class="del-btn">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>`
+
+        // Delete Button Event
+        const deleteBtn = element.querySelector('.del-btn');
+        deleteBtn.addEventListener('click', deleteItem);
+        
+        // Edit Button Event
+        const editBtn = element.querySelector('.edit-btn');
+        editBtn.addEventListener('click', editItem);
+        
+        list.appendChild(element);
+
+        displayAlert('Item added to the list','success');
+
+        container.classList.add('show-container');
+
+        addToLocalStorage(id, value);
+
+        setBackToDefault();
+    }
+    else if(value && editFlag){
+        console.log('editing');
+    }
+    else{
+         displayAlert('Please Enter Value','danger');
+    }
+}
+
+// FUNCTIONS
+
+// Alert Parametrization Component
+function displayAlert(text,action){
+    alert.textContent = text;
+    alert.classList.add(`alert-${action}`);
+
+    setTimeout(function(){
+        alert.textContent = '';
+        alert.classList.remove(`alert-${action}`);
+    }, 1000);
+}
+
+// Clear All Items Function
+function clearItems(){
+    const items = document.querySelectorAll('.grocery-item');
+    items.forEach(function(item){
+        list.removeChild(item);
+    });
+    container.classList.remove('show-container');
+    displayAlert('Items removed from the list','danger');
+}
+
+// Delete Function
+function deleteItem(e){
+   const elements = e.currentTarget.parentElement.parentElement;
+   list.removeChild(elements);
+
+   if(list.children.length === 0){
+    container.classList.remove('show-container');
+   }
+   displayAlert('Item removed','danger');
+   setBackToDefault();
+}
+
+// Edit Function
+function editItem() {
+    console.log('Edit Item');
+}
+
+// Default 
+function setBackToDefault(){
+    grocery.value = '';
+    editFlag = false;
+    editID = '';
+    submitBtn.textContent = 'Add';
+}
+
+// Local Storage
+function addToLocalStorage(id, value){
+    console.log('Added to the local storage');
+}
